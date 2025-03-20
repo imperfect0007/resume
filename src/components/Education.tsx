@@ -6,7 +6,7 @@ const Education = () => {
       degree: 'Bachelor of Engineering in Computer Science (AI & ML)',
       institution: 'ATME College of Engineering',
       location: 'Mysuru, India',
-      period: 'Aug 2022 – Present',
+      period: 'Dec 2021 – Present',
       description: 'Focused on Artificial Intelligence, Machine Learning, and Data Science.',
       achievements: [
         'Current CGPA: 8.39',
