@@ -75,7 +75,20 @@ const Window = ({
   const effY = Math.max(0, Math.min(y, vh - effH));
 
   const maximizedStyle: React.CSSProperties = isMaximized || isMobile
-    ? { position: 'fixed', top: 0, left: 0, right: 0, zIndex, width: '100%', height: 'auto', minHeight: 0 }
+    ? {
+        position: 'fixed',
+        top: isMobile ? 16 : 0,
+        left: isMobile ? 12 : 0,
+        right: isMobile ? 12 : 0,
+        bottom: isMobile ? 'auto' : undefined,
+        transform: isMobile ? 'none' : undefined,
+        zIndex,
+        width: isMobile ? 'calc(100% - 24px)' : '100%',
+        maxWidth: '100%',
+        height: isMobile ? 'min(65vh, calc(100dvh - 140px))' : 'auto',
+        maxHeight: isMobile ? 'min(65vh, calc(100dvh - 140px))' : undefined,
+        minHeight: isMobile ? 260 : 0,
+      }
     : { position: 'absolute', left: effX, top: effY, width: effW, height: effH, maxWidth: '100vw', maxHeight: `calc(100vh - ${TASKBAR_H}px)`, zIndex };
 
   const isFullView = isMaximized || isMobile;
